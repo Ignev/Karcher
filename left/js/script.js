@@ -1,5 +1,5 @@
 $(".slider").slick({
-    infinite: true,
+    infinite: false,
     swipe: false,
     fade: true,
     cssEase: "linear",
