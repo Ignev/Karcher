@@ -6,7 +6,7 @@ $(".slider").slick({
     speed: 1000,
     autoplaySpeed: 2000,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
   });
 
   window.addEventListener('wheel', function(event) {
