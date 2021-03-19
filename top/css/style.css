@@ -305,12 +305,12 @@ div {
 
 @media screen and (min-device-width: 1280px){
   .bg {
-    background-position: 80% 0;
-    background-size: 37% 32%;
+    background-position: 81% 0;
+    background-size: 38% 38%;
   }
   
   .bg1 {
     background-position: 21% -3%;
-    background-size: 37% 37%;
+    background-size: 38% 38%;
   }
 }
