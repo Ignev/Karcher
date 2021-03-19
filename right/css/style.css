@@ -1,0 +1,586 @@
+@font-face {
+  font-family: "AptiferBlack";
+
+  src: url("fonts/AptiferSansLTPro-Black.otf");
+}
+
+@font-face {
+  font-family: "AptiferRegular";
+
+  src: url("fonts/AptiferSansLTPro-Regular.otf");
+}
+
+html,
+body {
+  margin: 0;
+
+  padding: 0;
+
+  width: 100%;
+
+  min-width: 130px;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+div {
+  position: absolute;
+}
+
+.block {
+  width: 100%;
+  min-width: 130px;
+  height: 30%;
+  position: fixed;
+  top: 35%;
+  left: 0;
+  overflow: hidden;
+  cursor: pointer;
+  max-width: 520px;
+  max-height: 1200px;
+  z-index: 100;
+}
+
+.container,
+.container1 {
+  width: 100%;
+  min-width: 130px;
+  height: 100%;
+  top: 0px;
+  right: 0;
+  overflow: hidden;
+  cursor: pointer;
+  /*max-width: 1180px;*/
+  max-width: 480px;
+  max-height: 1200px;
+}
+
+.bg {
+  position: absolute;
+  background-color: #ffed00;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  position: fixed;
+}
+
+.text_m {
+  width: 62%;
+  height: 2.2%;
+  background-image: url(./text.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: 5.3%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 100;
+}
+
+.text_w {
+  width: 75.7%;
+  height: 2.2%;
+  background-image: url(./text_m.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 100;
+}
+
+.btn {
+  width: 66.5%;
+  height: 5.5%;
+  background-color: #f2f700;
+  position: absolute;
+  top: 73.2%;
+  left: 18%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: btn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.text {
+  width: 89%;
+  height: 31%;
+  background-image: url(./textBtn.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.link {
+  width: 43%;
+  height: 2%;
+  background-image: url(./link.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 100;
+}
+
+.logo {
+  width: 46%;
+  height: 9.5%;
+  background-image: url(./logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: 87.3%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 100;
+}
+
+@keyframes slider {
+  0% {
+    transform: scale(0.8);
+    /* box-shadow: 0 0 0 0 rgba(8, 39, 143, 0.7); */
+  }
+
+  70% {
+    transform: scale(1);
+    /* box-shadow: 0 0 0 10px rgba(52, 172, 224, 0); */
+  }
+
+  100% {
+    transform: scale(0.8);
+    /* box-shadow: 0 0 0 0 rgba(52, 172, 224, 0); */
+  }
+}
+
+@keyframes btn {
+  0% {
+    transform: scale(0.95);
+    /* box-shadow: 0 0 0 0 rgba(8, 39, 143, 0.7); */
+  }
+
+  70% {
+    transform: scale(1);
+    /* box-shadow: 0 0 0 10px rgba(52, 172, 224, 0); */
+  }
+
+  100% {
+    transform: scale(0.95);
+    /* box-shadow: 0 0 0 0 rgba(52, 172, 224, 0); */
+  }
+}
+
+/* Слайдер: */
+.slider {
+  max-width: 100%;
+  /* Положение элемента устанавливается относительно его исходной позиции: */
+  position: relative;
+  /* Центрируем по горизонтали: */
+  margin: auto;
+  height: 100vh;
+}
+
+/* Картинка масштабируется по отношению к родительскому элементу: */
+.slider img {
+  /* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.slider1 {
+  max-width: 100%;
+  /* Положение элемента устанавливается относительно его исходной позиции: */
+  position: relative;
+  /* Центрируем по горизонтали: */
+  margin: auto;
+  height: 100vh;
+  outline-style: none;
+}
+
+/* Картинка масштабируется по отношению к родительскому элементу: */
+.slider1 img {
+  /* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  border: none;
+  outline-style: none;
+}
+
+/* Кнопки назад и вперёд: */
+.arrow {
+  width: 100%;
+  height: 100vh;
+  max-width: 480px;
+  max-height: 1200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.previous,
+.next {
+  width: 10%;
+  height: 10%;
+  /* Добавляет курсору иконку, когда тот оказывается над кнопкой: */
+  cursor: pointer;
+  /* Положение элемента задаётся относительно границ браузера: */
+  position: absolute;
+  top: 50%;
+  /* width: auto; */
+  margin-top: -22px;
+  padding: 16px;
+  /* Оформление самих кнопок: */
+  color: white;
+  /* font-weight: 100;
+    font-size: 100px; */
+  /* Плавное появление фона при наведении курсора: */
+  transition: 0.6s ease;
+  /* Скругление границ: */
+  border-radius: 0 3px 3px 0;
+  z-index: 1000000;
+}
+
+.next {
+  right: 1%;
+  border-radius: 3px 0 0 3px;
+}
+
+.previous1,
+.next1 {
+  /* Добавляет курсору иконку, когда тот оказывается над кнопкой: */
+  cursor: pointer;
+  /* Положение элемента задаётся относительно границ браузера: */
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  /* Оформление самих кнопок: */
+  /* color: white;
+    font-weight: 100;
+    font-size: 100px; */
+  /* Плавное появление фона при наведении курсора: */
+  transition: 0.6s ease;
+  /* Скругление границ: */
+  border-radius: 0 3px 3px 0;
+  z-index: 1000000;
+}
+
+.next1 {
+  background-image: url(./arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  right: 1%;
+  border-radius: 3px 0 0 3px;
+}
+
+.previous1 {
+  background-image: url(./arrow_copy.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* При наведении курсора на кнопки добавляем фон кнопок: */
+/* .previous:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+} */
+
+/* Анимация слайдов: */
+/* .slider .item {
+    animation-name: fade;
+    animation-duration: 1.5s;
+} */
+
+/* @keyframes fade {
+
+   
+    from {
+        opacity: 0.4
+    }
+
+    to {
+        opacity: 1
+    }
+} */
+
+.bg1 {
+  position: absolute;
+
+  background-color: #ffed00;
+
+  background-size: 100% 100%;
+
+  background-repeat: no-repeat;
+
+  height: 100%;
+
+  top: 0;
+
+  right: 0;
+
+  overflow: hidden;
+
+  position: fixed;
+
+  clip-path: polygon(0 0, 0% 0, 0% 100%, 0% 100%);
+}
+
+/* .bg1Active {
+    animation-name: bg1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+} */
+
+@keyframes bg1 {
+  0% {
+    clip-path: polygon(0 0, 500px 0, 500px 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0 0, 600px 0, 600px 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(0 0, 500px 0, 500px 100%, 0% 100%);
+  }
+}
+
+@keyframes bg4k {
+  0% {
+    clip-path: polygon(0 0, 83% 0, 83% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0 0, 84.5% 0, 84.5% 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(0 0, 83% 0, 83% 100%, 0% 100%);
+  }
+}
+
+.back {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/right-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slider1 {
+  max-width: 100%;
+  /* Положение элемента устанавливается относительно его исходной позиции: */
+  position: relative;
+  /* Центрируем по горизонтали: */
+  margin: auto;
+  height: 100vh;
+}
+
+/* Картинка масштабируется по отношению к родительскому элементу: */
+.slider1 .item1 img {
+  /* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Анимация слайдов: */
+.slider1 .item1 {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.ball {
+  background: url(../img/icon.png) 50% 50% no-repeat;
+
+  background-size: contain;
+
+  width: 60px;
+
+  height: 60px;
+
+  border-radius: 50%;
+
+  z-index: 100000;
+
+  cursor: pointer;
+
+  top: 180px;
+}
+
+.ballActive {
+  animation-name: ball;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes ball {
+  0% {
+    transform: translateX(-7px);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-7px);
+  }
+}
+
+.line {
+  width: 5px;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(30px);
+  z-index: 100000;
+}
+
+.lineActive {
+  animation-name: line;
+
+  animation-duration: 1s;
+
+  animation-iteration-count: infinite;
+
+  animation-timing-function: linear;
+}
+
+@keyframes line {
+  0% {
+    transform: translateX(23px);
+  }
+
+  50% {
+    transform: translateX(30px);
+  }
+
+  100% {
+    transform: translateX(23px);
+  }
+}
+
+.cover {
+  right: 0;
+}
+
+.clickArea {
+  width: 100%;
+
+  height: 100%;
+
+  top: 250px;
+
+  z-index: 100;
+}
+
+.clickAreaTop {
+  width: 100%;
+
+  height: 180px;
+
+  top: 0;
+
+  z-index: 100;
+}
+
+#hellopreloader > p {
+  display: none;
+}
+
+#hellopreloader_preload {
+  display: block;
+
+  position: fixed;
+
+  z-index: 9999999;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: #222222 url(../img/audio.svg) center center no-repeat;
+
+  background-size: 41px;
+}
+
+@media screen and (max-width: 313px) {
+  .btnFalse,
+  .btnTrue {
+    width: 11%;
+
+    height: 4%;
+
+    min-width: 138px;
+  }
+}
+
+@media screen and (max-width: 176px) {
+  .btnFalse,
+  .btnTrue {
+    width: 11%;
+
+    height: 3%;
+
+    min-width: 94px;
+  }
+}
+
+@media screen and (max-width: 130px) {
+  .btnFalse {
+    font-size: 10px;
+  }
+
+  .btnTrue {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .btnFalse {
+    font-size: 22px;
+  }
+
+  .btnTrue {
+    font-size: 22px;
+  }
+}
+
+.unVisible {
+  visibility: hidden;
+}
+
+.static {
+  position: static;
+}

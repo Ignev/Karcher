@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Left_banner</title>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body id="body">
+    <div id="hellopreloader">
+      <div id="hellopreloader_preload"></div>
+    </div>
+
+    <div class="cover" id="cover">
+      <div class="ball"></div>
+      <div class="line"></div>
+    </div>
+    <div class="bg" id="bg">
+      <div class="container" id="container">
+        
+      </div>
+    </div>
+
+    <div class="bg1" id="bg1">
+      <div class="container1" id="container1">
+        <p class="title">
+          DU BIST <br>
+          DER PROFI. <br>
+          BRING BACK <br>
+          THE WOW.
+        </p>
+        <div class="back"></div>
+    </div>
+
+    <div class="clickArea" id="clickArea"></div>
+    <div class="clickAreaTop" id="clickAreaTop"></div>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/slick.js"></script>
+    <script src="./js/script.js"></script>
+    <script type="text/javascript">
+      var hellopreloader = document.getElementById("hellopreloader_preload");
+
+      function fadeOutnojquery(el) {
+        el.style.opacity = 1;
+
+        var interhellopreloader = setInterval(function () {
+          el.style.opacity = el.style.opacity - 0.05;
+
+          if (el.style.opacity <= 0.05) {
+            clearInterval(interhellopreloader);
+
+            hellopreloader.style.display = "none";
+          }
+        }, 16);
+      }
+
+      window.onload = function () {
+        setTimeout(function () {
+          fadeOutnojquery(hellopreloader);
+        }, 1000);
+      };
+    </script>
+
+    <script>
+      var bg = document.getElementsByClassName("bg")[0];
+      var bg1 = document.getElementsByClassName("bg1")[0];
+      var cover = document.getElementsByClassName("cover")[0];
+      var block = document.getElementsByClassName("ball")[0];
+      var line = document.getElementsByClassName("line")[0];
+      var container = document.getElementById("container");
+      var container1 = document.getElementById("container1");
+
+      var position;
+      var bodyWidth;
+
+      var leftPosition = 0;
+      var positionStart = false;
+      var bodyWidth = document.getElementById("body").offsetWidth;
+
+      function getScrollBarWidth() {
+        var $outer = $("<div>")
+            .css({
+              visibility: "hidden",
+              width: 100,
+              overflow: "scroll",
+            })
+            .appendTo("body"),
+          widthWithScroll = $("<div>")
+            .css({
+              width: "100%",
+            })
+            .appendTo($outer)
+            .outerWidth();
+
+        $outer.remove();
+        return 100 - widthWithScroll;
+      }
+
+      var a = getScrollBarWidth();
+
+      container.setAttribute(
+        "style",
+        "width: " + bodyWidth + "px; left: " + (leftPosition - a) + "px"
+      );
+      container1.setAttribute(
+        "style",
+        "width: " + bodyWidth + "px; left: " + (leftPosition - a) + "px"
+      );
+
+      function resize() {
+        getScrollBarWidth();
+        var bodyWidth = document.getElementById("body").offsetWidth;
+        if (bodyWidth > 480) {
+          if (a > 17) {
+            a = 0;
+          }
+          leftPosition = bodyWidth - 480;
+          container.setAttribute(
+            "style",
+            "width: " + bodyWidth + "px; left: " + (leftPosition - a) + "px"
+          );
+          container1.setAttribute(
+            "style",
+            "width: " + bodyWidth + "px; left: " + (leftPosition - a) + "px"
+          );
+        }
+
+        if (bodyWidth < 480) {
+          leftPosition = 0;
+          container.setAttribute(
+            "style",
+            "width: " + bodyWidth + "px; left: " + a + "px"
+          );
+          container1.setAttribute(
+            "style",
+            "width: " + bodyWidth + "px; left: " + a + "px"
+          );
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        resize();
+      });
+
+      window.onresize = function (event) {
+        resize();
+      };
+
+      block.onmousedown = saveXY;
+
+      document.onmouseup = clearXY;
+
+      function saveXY(obj_event) {
+        if (obj_event) {
+          x = obj_event.pageX;
+
+          y = obj_event.pageY;
+        } else {
+          x = window.event.clientX;
+        }
+
+        /* Узнаём текущие координаты блока */
+
+        x_block = block.offsetLeft;
+
+        /* Узнаём смещение */
+
+        delta_x = x_block - x;
+
+        /* При движении курсора устанавливаем вызов функции moveWindow */
+
+        document.onmousemove = moveBlock;
+      }
+
+      function clearXY() {
+        document.onmousemove = null; // При отпускании мыши убираем обработку события движения мыши
+
+        // if (position > widthBackground) {
+        //     position = widthBackground - 50;
+        //     parent.postMessage(JSON.stringify({
+        //         position: position
+        //     }), '*');
+        // }
+        // if (position < -20) {
+        //     position = 10;
+        //     parent.postMessage(JSON.stringify({
+        //         position: position
+        //     }), '*');
+        // }
+      }
+
+      var positionEnd;
+
+      setInterval(function () {
+        // if (position > (widthBackground - 10)) {
+        //     // clearXY();
+        //     position = widthBackground - 40;
+        //     block.style.left = position + 'px';
+        //     line.style.left = position + 'px';
+        // }
+        // if (position + 10 > widthBackground) {
+        //     block.style.left = widthBackground - 50 + "px";
+        //     line.style.left = widthBackground - 50 + "px";
+        // }
+      }, 50);
+
+      function moveBlock(obj_event) {
+        positionStart = true;
+
+        /* Получаем новые координаты курсора мыши */
+
+        if (obj_event) {
+          x = obj_event.pageX;
+        } else {
+          x = window.event.clientX;
+        }
+
+        /* Вычисляем новые координаты блока */
+
+        new_x = delta_x + x;
+
+        block.style.left = new_x + "px";
+
+        line.style.left = new_x + "px";
+
+        position = new_x;
+
+        if (position > widthBackground - 50) {
+          position = widthBackground - 50;
+          positionStart = false;
+          parent.postMessage(
+            JSON.stringify({
+              position: position,
+            }),
+            "*"
+          );
+        }
+
+        parent.postMessage(
+          JSON.stringify({
+            position: position,
+          }),
+          "*"
+        );
+      }
+
+      var heightBackground;
+
+      var widthBackground;
+
+      var res = false;
+
+      window.addEventListener("message", function (event) {
+        var parseData = JSON.parse(event.data);
+
+        if (parseData.h != undefined) {
+          heightBackground = parseData.h;
+        }
+
+        if (parseData.w != undefined) {
+          widthBackground = parseData.w;
+        }
+
+        if (parseData.position != undefined) {
+          position = parseData.position;
+        }
+
+        if (!positionStart) {
+        }
+
+        if (parseData.res != undefined) {
+          res = parseData.res;
+        }
+
+        if (res) {
+          block.style.left = position + "px";
+
+          line.style.left = position + "px";
+        } else {
+          block.style.left = 1300 + "px";
+
+          line.style.left = 1300 + "px";
+        }
+
+        if (parseData.res != undefined) {
+          res = parseData.res;
+        }
+
+        if (res) {
+          positionStart = true;
+
+          bg1.setAttribute(
+            "style",
+            "transform: translateX(" +
+              -a +
+              "px); clip-path: polygon(0 0, " +
+              (position + 30) +
+              "px 0, " +
+              (position + 30) +
+              "px 100%, 0 100%); width: " +
+              widthBackground +
+              "px; height: " +
+              heightBackground +
+              "px"
+          );
+          $(".ball").removeClass("ballActive");
+          $(".line").removeClass("lineActive");
+          $(".bg1").removeClass("bg1Active");
+        }
+      });
+
+      setInterval(function () {
+        if (!positionStart) {
+          block.style.left = widthBackground - 330 + "px";
+
+          line.style.left = widthBackground - 330 + "px";
+        } else {
+          $(".ball").removeClass("ballActive");
+          $(".line").removeClass("lineActive");
+          $(".bg1").removeClass("bg1Active");
+          parent.postMessage(
+            JSON.stringify({
+              res: true,
+            }),
+            "*"
+          );
+        }
+
+        bg.setAttribute(
+          "style",
+          "transform: translateX(" +
+            -a +
+            "px); width: " +
+            widthBackground +
+            "px; height: " +
+            heightBackground +
+            "px"
+        );
+
+        bg1.setAttribute(
+          "style",
+          "clip-path: polygon(0 0, " +
+            (position + 30) +
+            "px 0, " +
+            (position + 30) +
+            "px 100%, 0 100%); transform: translateX(" +
+            -a +
+            "px); width: " +
+            widthBackground +
+            "px; height: " +
+            heightBackground +
+            "px"
+        );
+
+        cover.setAttribute(
+          "style",
+          "transform: translateX(" +
+            -a +
+            "px); width: " +
+            widthBackground +
+            "px; height: " +
+            heightBackground +
+            "px"
+        );
+      }, 10);
+
+      setInterval(function () {
+        block.style.left = position + "px";
+        line.style.left = position + "px";
+      }, 1);
+    </script>
+
+    <script>
+      var x_click = document.getElementsByClassName("clickAreaTop")[0];
+      var x_click1 = document.getElementsByClassName("clickArea")[0];
+
+      x_click.addEventListener("click", clickout_1);
+      x_click1.addEventListener("click", clickout_1);
+
+      hellopreloader.addEventListener("click", clickout_1);
+
+      var x_click = document.getElementsByClassName("clickArea")[0];
+
+      var x_click1 = document.getElementsByClassName("clickAreaTop")[0];
+
+      x_click.addEventListener("click", clickout_1);
+
+      x_click1.addEventListener("click", clickout_1);
+
+      hellopreloader.addEventListener("click", clickout_1);
+
+      var clickTag = readGETParameter("dspx_clicktag_p");
+
+      var dspx_debug = readGETParameter("dspx_debug"),
+        clickoutLinkRedirect = readGETParameter("dspx_clicktag"),
+        clickoutLink2 = readGETParameter("dspxct"),
+        clickoutEncodeLevel = readGETParameter("dspx_encodelevel");
+
+      function readGETParameter(c) {
+        var n = window.location.search.substring(1),
+          i = n.split("&");
+
+        for (var e = 0; e < i.length; e++) {
+          var o = i[e].split("=");
+
+          if (o[0] == c) {
+            return decodeURIComponent(o[1]);
+          }
+        }
+
+        return c == "dspx_encodelevel" ? 2 : 0;
+      }
+
+      function clickout_1() {
+        fireASCClicks();
+
+        var e = clickTag;
+
+        if (clickoutLinkRedirect != 0) {
+          e = clickoutLinkRedirect + btoa(e);
+        }
+
+        if (clickoutLink2 != 0) {
+          e = clickoutLink2 + encodeURIComponent(e);
+        }
+
+        if (dspx_debug) console.log(e);
+
+        window.open(e);
+      }
+
+      function fireASCClicks() {
+        var _c = "dspx_clicktagASC",
+          _nn = 5;
+
+        var cASC = function (c, nn) {
+          var n = window.location.search.substring(1),
+            i = n.split("&");
+
+          var aa = [];
+
+          for (var e = 0; e < i.length; e++) {
+            var o = i[e].split("=");
+
+            for (var ni = 0; ni < nn; ni++) {
+              if (ni == 0) cc = c;
+              else cc = c + ni;
+
+              if (o[0] == cc) {
+                aa.push(decodeURIComponent(o[1]));
+              }
+            }
+          }
+
+          return aa;
+        };
+
+        var ctASC = cASC(_c, _nn);
+
+        for (i = 0; i < ctASC.length; i++) {
+          if (dspx_debug == 1) console.log("fire Click ASC:" + ctASC[i]);
+
+          new Image().src = ctASC[i];
+        }
+      }
+    </script>
+  </body>
+</html>

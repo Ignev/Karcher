@@ -1,0 +1,300 @@
+*,*::after,*::before{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Clan";
+  src: url(../fonts/ClanOT-NarrowBlack.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 130px;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  outline-style: none;
+}
+
+div {
+  position: absolute;
+}
+
+.block {
+  width: 100%;
+  min-width: 130px;
+  height: 30%;
+  position: fixed;
+  top: 35%;
+  right: 0;
+  overflow: hidden;
+  cursor: pointer;
+  max-width: 520px;
+  max-height: 1200px;
+  z-index: 100;
+}
+.title{
+  position: absolute;
+  z-index: 1000;
+  color: #fff;
+  font-size: 50px;
+  font-family: "Clan";
+  top: 55%;
+  left: 20%;
+}
+
+.container,
+.container1 {
+  width: 100%;
+  min-width: 130px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 17px;
+  overflow: hidden;
+  cursor: pointer;
+  max-width: 520px;
+  max-height: 1200px;
+}
+
+.bg {
+  position: absolute;
+
+  background-color: #ffed00;
+
+  background-size: 100% 100%;
+
+  background-repeat: no-repeat;
+
+  width: 100%;
+
+  height: 100%;
+
+  top: 0;
+
+  left: 0;
+
+  overflow: hidden;
+
+  position: absolute;
+}
+
+
+@keyframes btn {
+  0% {
+    transform: scale(0.95);
+    /* box-shadow: 0 0 0 0 rgba(8, 39, 143, 0.7); */
+  }
+
+  70% {
+    transform: scale(1);
+    /* box-shadow: 0 0 0 10px rgba(52, 172, 224, 0); */
+  }
+
+  100% {
+    transform: scale(0.95);
+    /* box-shadow: 0 0 0 0 rgba(52, 172, 224, 0); */
+  }
+}
+
+.bg1 {
+  position: absolute;
+  background-color: #ffed00;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.back {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/left-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bg1Active {
+  animation-name: bg1;
+
+  animation-duration: 3s;
+
+  animation-iteration-count: infinite;
+
+  animation-timing-function: linear;
+}
+
+/* .slider1 {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    height: 100vh;
+
+}
+
+
+.slider1 .item1 img {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.slider1 .item1 {
+    animation-name: fade;
+    animation-duration: 1.5s;
+} */
+
+@keyframes bg1 {
+  0% {
+    clip-path: polygon(0 0, 633px 0, 633px 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0 0, 733px 0, 733px 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(0 0, 633px 0, 633px 100%, 0% 100%);
+  }
+}
+
+.ball {
+  background: url(../img/icon.png) 50% 50% no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 100000;
+  cursor: pointer;
+  top: 180px;
+  animation-name: btn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.ballActive {
+  animation-name: ball;
+
+  animation-duration: 3s;
+
+  animation-iteration-count: infinite;
+
+  animation-timing-function: linear;
+}
+
+@keyframes ball {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(100px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.line {
+  width: 5px;
+
+  height: 100%;
+
+  background-color: #fff;
+
+  transform: translateX(30px);
+  z-index: 10000;
+}
+
+.lineActive {
+  animation-name: line;
+
+  animation-duration: 3s;
+
+  animation-iteration-count: infinite;
+
+  animation-timing-function: linear;
+}
+
+@keyframes line {
+  0% {
+    transform: translateX(30px);
+  }
+
+  50% {
+    transform: translateX(130px);
+  }
+
+  100% {
+    transform: translateX(30px);
+  }
+}
+
+.cover {
+  left: 0;
+  z-index: 99;
+}
+
+.clickArea {
+  width: 100%;
+
+  height: 100%;
+
+  top: 250px;
+
+  z-index: 100;
+}
+
+.clickAreaTop {
+  width: 100%;
+
+  height: 180px;
+
+  top: 0;
+
+  z-index: 100;
+}
+
+#hellopreloader > p {
+  display: none;
+}
+
+#hellopreloader_preload {
+  display: block;
+
+  position: fixed;
+
+  z-index: 99999;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: #222222 url(../img/audio.svg) center center no-repeat;
+
+  background-size: 41px;
+}

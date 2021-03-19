@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Top_banner</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body id="body">
+    <div id="hellopreloader">
+      <div id="hellopreloader_preload"></div>
+    </div>
+
+    <div class="bg" id="bg_bottom">
+      <div class="container">
+       
+      </div>
+    </div>
+
+    <div class="bg1" id="bg_bottom">
+      <div class="container">
+      
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+      var hellopreloader = document.getElementById("hellopreloader_preload");
+
+      function fadeOutnojquery(el) {
+        el.style.opacity = 1;
+
+        var interhellopreloader = setInterval(function () {
+          el.style.opacity = el.style.opacity - 0.05;
+
+          if (el.style.opacity <= 0.05) {
+            clearInterval(interhellopreloader);
+
+            hellopreloader.style.display = "none";
+          }
+        }, 16);
+      }
+
+      window.onload = function () {
+        setTimeout(function () {
+          fadeOutnojquery(hellopreloader);
+        }, 1000);
+      };
+    </script>
+
+    <script>
+      var bg_bottom = document.getElementById("bg_bottom");
+      document.addEventListener("DOMContentLoaded", function () {
+        resize();
+      });
+
+      window.onresize = function (event) {
+        resize();
+      };
+
+      function getScrollBarWidth() {
+        var $outer = $("<div>")
+            .css({
+              visibility: "hidden",
+              width: 100,
+              overflow: "scroll",
+            })
+            .appendTo("body"),
+          widthWithScroll = $("<div>")
+            .css({
+              width: "100%",
+            })
+            .appendTo($outer)
+            .outerWidth();
+
+        $outer.remove();
+
+        return 100 - widthWithScroll;
+      }
+
+      function resize() {
+        getScrollBarWidth();
+      }
+
+      var a = getScrollBarWidth();
+
+      window.addEventListener("message", function (event) {
+        var parseData = JSON.parse(event.data);
+
+        var currscroll = parseData.scrollPos;
+
+        if (parseData.scrollPos > 249) {
+          currscroll = parseData.scrollPos;
+        } else if (parseData.scrollPos < 250) {
+          currscroll = parseData.scrollPos;
+        } else {
+          currscroll = parseData.topOffset;
+        }
+        if (parseData.scrollPos != undefined) {
+        }
+
+        // if (parseData.scrollPos != undefined) {
+
+        //     bg_top.style.transform = 'translate(-50%, ' + parseData.scrollPos + 'px)';
+
+        // } else {
+
+        //     bg_top.style.transform = 'translate(-50%, 0px)';
+
+        // }
+
+        bg_bottom.style.height = parseData.h + "px";
+
+        bg_bottom.style.width = parseData.w + "px";
+
+        bg_bottom.style.left = "calc(50% - " + a / 2 + "px)";
+      });
+    </script>
+
+    <script>
+      var x_click = document.getElementsByTagName("body")[0];
+
+      x_click.addEventListener("click", clickout_1);
+
+      var clickTag = readGETParameter("dspx_clicktag_p");
+
+      var dspx_debug = readGETParameter("dspx_debug"),
+        clickoutLinkRedirect = readGETParameter("dspx_clicktag"),
+        clickoutLink2 = readGETParameter("dspxct"),
+        clickoutEncodeLevel = readGETParameter("dspx_encodelevel");
+
+      function readGETParameter(c) {
+        var n = window.location.search.substring(1),
+          i = n.split("&");
+
+        for (var e = 0; e < i.length; e++) {
+          var o = i[e].split("=");
+
+          if (o[0] == c) {
+            return decodeURIComponent(o[1]);
+          }
+        }
+
+        return c == "dspx_encodelevel" ? 2 : 0;
+      }
+
+      function clickout_1() {
+        fireASCClicks();
+
+        var e = clickTag;
+
+        if (clickoutLinkRedirect != 0) {
+          e = clickoutLinkRedirect + btoa(e);
+        }
+
+        if (clickoutLink2 != 0) {
+          e = clickoutLink2 + encodeURIComponent(e);
+        }
+
+        if (dspx_debug) console.log(e);
+
+        window.open(e);
+      }
+
+      function fireASCClicks() {
+        var _c = "dspx_clicktagASC",
+          _nn = 5;
+
+        var cASC = function (c, nn) {
+          var n = window.location.search.substring(1),
+            i = n.split("&");
+
+          var aa = [];
+
+          for (var e = 0; e < i.length; e++) {
+            var o = i[e].split("=");
+
+            for (var ni = 0; ni < nn; ni++) {
+              if (ni == 0) cc = c;
+              else cc = c + ni;
+
+              if (o[0] == cc) {
+                aa.push(decodeURIComponent(o[1]));
+              }
+            }
+          }
+
+          return aa;
+        };
+
+        var ctASC = cASC(_c, _nn);
+
+        for (i = 0; i < ctASC.length; i++) {
+          if (dspx_debug == 1) console.log("fire Click ASC:" + ctASC[i]);
+
+          new Image().src = ctASC[i];
+        }
+      }
+    </script>
+  </body>
+</html>

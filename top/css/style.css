@@ -1,0 +1,254 @@
+html,
+body {
+  margin: 0;
+
+  padding: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  cursor: pointer;
+
+  overflow: hidden;
+}
+
+div {
+  position: absolute;
+}
+
+.container {
+  width: 100%;
+
+  max-width: 1280px;
+
+  min-width: 850px;
+
+  height: 250px;
+
+  top: 0px;
+
+  left: 0;
+
+  right: 0;
+
+  margin: auto;
+
+  overflow: hidden;
+}
+
+.btn {
+  width: 20%;
+  height: 6.5%;
+  background-image: url(NEW_SEASON_NEW_STYLES.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 21.6%;
+  left: 40%;
+}
+
+.text {
+  width: 52%;
+  height: 10.5%;
+  background-image: url(DIE_SCHO_ИNEN_DINGE_DES_LEBENS.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 31.6%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.logo-black {
+  width: 23%;
+  height: 30.5%;
+  background-image: url(../img/logo-black.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 40%;
+  left: 35%;
+  transform: translate(-50%);
+}
+.logo-yellow {
+  width: 23%;
+  height: 30.5%;
+  background-image: url(../img/logo-yellow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 40%;
+  left: 35%;
+  transform: translate(-50%);
+}
+
+.bg {
+  position: absolute;
+  background-color: #ffed00;
+  background-image: url(../img/right-bg.png);
+  background-position: 70% 0;
+  background-size: 26.5% 26%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  position: fixed;
+}
+
+.bg1 {
+  position: absolute;
+  background-color: #ffed00;
+  background-image: url(../img/left-bg.png);
+  background-size: 26.5% 26%;
+  background-position: 33.9% 0%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  position: fixed;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.bg1Active {
+  animation-name: bg1;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes bg1 {
+  0% {
+    clip-path: polygon(0 0, 633px 0, 633px 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0 0, 733px 0, 733px 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(0 0, 633px 0, 633px 100%, 0% 100%);
+  }
+}
+
+.ball {
+  background: url(../img/icon.png) 50% 50% no-repeat;
+
+  background-size: contain;
+
+  width: 60px;
+
+  height: 60px;
+
+  border-radius: 50%;
+
+  z-index: 100000;
+
+  cursor: pointer;
+
+  top: 180px;
+}
+
+.ballActive {
+  animation-name: ball;
+
+  animation-duration: 3s;
+
+  animation-iteration-count: infinite;
+
+  animation-timing-function: linear;
+}
+
+@keyframes ball {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(100px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.line {
+  width: 5px;
+
+  height: 100%;
+
+  z-index: 100;
+
+  background-color: #fff;
+
+  transform: translateX(30px);
+}
+
+.lineActive {
+  animation-name: line;
+
+  animation-duration: 3s;
+
+  animation-iteration-count: infinite;
+
+  animation-timing-function: linear;
+}
+
+@keyframes line {
+  0% {
+    transform: translateX(30px);
+  }
+
+  50% {
+    transform: translateX(130px);
+  }
+
+  100% {
+    transform: translateX(30px);
+  }
+}
+
+.cover {
+  transform: translate(-50%);
+}
+
+.clickAreaTop {
+  width: 100%;
+
+  height: 180px;
+
+  top: 0;
+
+  z-index: 100;
+}
+
+#hellopreloader > p {
+  display: none;
+}
+
+#hellopreloader_preload {
+  display: block;
+
+  position: fixed;
+
+  z-index: 99999;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: #222222 url(../img/audio.svg) center center no-repeat;
+
+  background-size: 41px;
+}
