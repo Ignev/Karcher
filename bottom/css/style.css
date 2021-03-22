@@ -1,9 +1,15 @@
 html,
 body {
   margin: 0;
+
   padding: 0;
+
   width: 100%;
+
   height: 100%;
+
+  cursor: pointer;
+
   overflow: hidden;
 }
 
@@ -12,44 +18,33 @@ div {
 }
 
 .container {
-  position: relative;
-
   width: 100%;
 
-  height: 100%;
+  max-width: 1280px;
 
-  margin: 0 auto;
+  min-width: 850px;
+
+  height: 250px;
+
+  top: 0px;
+
+  left: 0;
+
+  right: 0;
+
+  margin: auto;
 
   overflow: hidden;
 }
 
-.container {
-  width: 100%;
-  height: 100vh;
-  background-color: #ffed00;
-  position: relative;
-}
-
-.logo {
-  width: 17%;
-  height: 39%;
-  background-image: url(./logo.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  top: 50%;
-  left: 3%;
-  transform: translate(0%, -50%);
-}
 
 .bg {
   position: absolute;
   background-color: #ffed00;
   background-image: url(../img/right-bg.jpg);
-  background-position: 70% 0;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-position: 100% -770px;
+  background-size: 50% 100%;
   width: 100%;
   height: 100%;
   top: 0px;
@@ -63,9 +58,9 @@ div {
   position: absolute;
   background-color: #ffed00;
   background-image: url(../img/left-bg.jpg);
-  background-size: 26.5% 26%;
-  background-position: 33.9% 0%;
   background-repeat: no-repeat;
+  background-position: 11% -860px;
+  background-size: contain;
   width: 100%;
   height: 100%;
   top: 0px;
@@ -76,6 +71,117 @@ div {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
+.bg1Active {
+  animation-name: bg1;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes bg1 {
+  0% {
+    clip-path: polygon(0 0, 633px 0, 633px 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0 0, 733px 0, 733px 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(0 0, 633px 0, 633px 100%, 0% 100%);
+  }
+}
+
+.ball {
+
+  background-size: contain;
+
+  width: 60px;
+
+  height: 60px;
+
+  border-radius: 50%;
+
+  z-index: 100000;
+
+  cursor: pointer;
+
+  top: 180px;
+}
+
+.ballActive {
+  animation-name: ball;
+
+  animation-duration: 3s;
+
+  animation-iteration-count: infinite;
+
+  animation-timing-function: linear;
+}
+
+@keyframes ball {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(100px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.line {
+  width: 5px;
+
+  height: 100%;
+
+  z-index: 100;
+
+  background-color: #fff;
+
+  transform: translateX(30px);
+}
+
+.lineActive {
+  animation-name: line;
+
+  animation-duration: 3s;
+
+  animation-iteration-count: infinite;
+
+  animation-timing-function: linear;
+}
+
+@keyframes line {
+  0% {
+    transform: translateX(30px);
+  }
+
+  50% {
+    transform: translateX(130px);
+  }
+
+  100% {
+    transform: translateX(30px);
+  }
+}
+
+.cover {
+  transform: translate(-50%);
+}
+
+.clickAreaTop {
+  width: 100%;
+
+  height: 180px;
+
+  top: 0;
+
+  z-index: 100;
+}
 
 #hellopreloader > p {
   display: none;
@@ -99,4 +205,5 @@ div {
   background: #222222 url(../img/audio.svg) center center no-repeat;
 
   background-size: 41px;
+  
 }
