@@ -346,14 +346,14 @@ div {
   position: static;
 }
 
-/* @media screen and (max-device-width: 1920px){
+@media screen and (max-device-width: 1920px){
  .slider__phone {
   position: absolute;
   width: 25vw;
   top: 52%;
   right: 58%;
 }
-} */
+}
 
 @media screen and (max-device-width: 1440px){
   .back {
