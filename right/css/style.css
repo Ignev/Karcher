@@ -256,7 +256,7 @@ div {
 .slider__phone {
   position: absolute;
   width: 25vw;
-  top: 50%;
+  top: 52%;
   right: 58%;
 }
 .btn {
@@ -344,4 +344,27 @@ div {
 
 .static {
   position: static;
+}
+
+/* @media screen and (max-device-width: 1920px){
+ .slider__phone {
+  position: absolute;
+  width: 25vw;
+  top: 52%;
+  right: 58%;
+}
+} */
+
+@media screen and (max-device-width: 1440px){
+  .back {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/right-bg.jpg);
+    background-position: 79% 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
