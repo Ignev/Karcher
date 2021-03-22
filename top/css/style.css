@@ -86,10 +86,9 @@ div {
 .bg {
   position: absolute;
   background-color: #ffed00;
-  background-image: url(../img/right-bg.png);
-  background-position: 70% 0;
-  background-size: 26.5% 26%;
+  background-image: url(../img/right-bg.jpg);
   background-repeat: no-repeat;
+  background-position: 110% -1%;
   width: 100%;
   height: 100%;
   top: 0px;
@@ -102,10 +101,10 @@ div {
 .bg1 {
   position: absolute;
   background-color: #ffed00;
-  background-image: url(../img/left-bg.png);
-  background-size: 26.5% 26%;
-  background-position: 33.9% 0%;
+  background-image: url(../img/left-bg.jpg);
   background-repeat: no-repeat;
+  background-position: 110px -5.6px;
+  background-size: contain;
   width: 100%;
   height: 100%;
   top: 0px;
@@ -256,15 +255,13 @@ div {
 
 
 
-
 @media screen and (max-device-width: 1920px){
   .bg {
     position: absolute;
     background-color: #ffed00;
-    background-image: url(../img/right-bg.png);
-    background-position: 70% 0;
-    background-size: 26.5% 26%;
+    background-image: url(../img/right-bg.jpg);
     background-repeat: no-repeat;
+    background-position: 110% -1%;
     width: 100%;
     height: 100%;
     top: 0px;
@@ -277,10 +274,10 @@ div {
   .bg1 {
     position: absolute;
     background-color: #ffed00;
-    background-image: url(../img/left-bg.png);
-    background-size: 26.5% 26%;
-    background-position: 33.9% 0%;
+    background-image: url(../img/left-bg.jpg);
     background-repeat: no-repeat;
+    background-position: 110px -5.6px;
+    background-size: contain;
     width: 100%;
     height: 100%;
     top: 0px;
@@ -291,26 +288,71 @@ div {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
 }
-@media screen and (min-device-width: 1440px){
+
+
+@media screen and (max-device-width: 1440px){
   .bg {
-    background-position: 80% 0;
-    background-size: 50.5% 26%;
+    position: absolute;
+    background-color: #ffed00;
+    background-image: url(../img/right-bg-ls.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    position: fixed;
   }
   
   .bg1 {
-    background-size: 26.5% 26%;
-    background-position: 33.9% 0%;
+    position: absolute;
+    background-color: #ffed00;
+    background-image: url(../img/left-bg-ls.jpg);
+    background-repeat: no-repeat;
+    background-position: -3.2% 0%;
+    background-size: 50% 100%;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    position: fixed;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
 }
 
-@media screen and (min-device-width: 1280px){
+@media screen and (max-device-width: 1280px){
   .bg {
-    background-position: 81% 0;
-    background-size: 38% 38%;
+    position: absolute;
+    background-color: #ffed00;
+    background-image: url(../img/right-bg-s.jpg);
+    background-repeat: no-repeat;
+    background-position: 85% 0%;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    position: fixed;
   }
   
   .bg1 {
-    background-position: 21% -3%;
-    background-size: 38% 38%;
+    position: absolute;
+    background-color: #ffed00;
+    background-image: url(../img/left-bg-s.jpg);
+    background-repeat: no-repeat;
+    background-position: -2.5% 0%;
+    background-size: 50% 100%;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    position: fixed;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
 }
