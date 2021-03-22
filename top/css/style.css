@@ -37,29 +37,6 @@ div {
   overflow: hidden;
 }
 
-.btn {
-  width: 20%;
-  height: 6.5%;
-  background-image: url(NEW_SEASON_NEW_STYLES.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  top: 21.6%;
-  left: 40%;
-}
-
-.text {
-  width: 52%;
-  height: 10.5%;
-  background-image: url(DIE_SCHO_ИNEN_DINGE_DES_LEBENS.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  top: 31.6%;
-  left: 50%;
-  transform: translate(-50%);
-}
-
 .logo-black {
   width: 23%;
   height: 30.5%;
@@ -104,7 +81,7 @@ div {
   background-color: #ffed00;
   background-image: url(../img/left-bg.jpg);
   background-repeat: no-repeat;
-  background-position: 5% -28px;
+  background-position: 0% 0%;
   background-size: 50% 100%;
   width: 100%;
   height: 100%;
@@ -251,5 +228,111 @@ div {
   background: #222222 url(../img/audio.svg) center center no-repeat;
 
   background-size: 41px;
-  
 }
+
+/* @media screen and (max-device-width: 1920px){
+  .bg {
+    position: absolute;
+    background-color: #ffed00;
+    background-image: url(../img/right-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 50% 100%;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    position: fixed;
+  }
+  
+  .bg1 {
+    position: absolute;
+    background-color: #ffed00;
+    background-image: url(../img/left-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: 0% 29%;
+    background-size: 50%;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    position: fixed;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+} */
+
+/* 
+
+@media screen and (max-device-width: 1440px){
+  .bg {
+    position: absolute;
+    background-color: #ffed00;
+    background-image: url(../img/right-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: 97%;
+    background-size: 50% 100%;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    position: fixed;
+  }
+  
+  .bg1 {
+    position: absolute;
+    background-color: #ffed00;
+    background-image: url(../img/left-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: -5% 0%;
+    background-size: 50%;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    position: fixed;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+@media screen and (max-device-width: 1280px){
+  .bg {
+    position: absolute;
+    background-color: #ffed00;
+    background-image: url(../img/right-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: 98.5%;
+    background-size: 50% 100%;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    position: fixed;
+  }
+  
+  .bg1 {
+    position: absolute;
+    background-color: #ffed00;
+    background-image: url(../img/left-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: 50%;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    position: fixed;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+} */
