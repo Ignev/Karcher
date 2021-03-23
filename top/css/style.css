@@ -79,12 +79,14 @@ div {
   height: 100%;
   position: absolute;
   right: 152.9px;
+  pointer-events: none;
 }
 .bg1__img{
   width: 50vw;
   height: 100%;
   position: absolute;
   left: 168px;
+  pointer-events: none;
 }
 .bg1 {
   position: absolute;

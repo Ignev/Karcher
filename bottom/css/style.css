@@ -16,6 +16,12 @@ body {
 div {
   position: absolute;
 }
+@font-face {
+  font-family: "Clan";
+  src: url(../fonts/ClanOT-NarrowBlack.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
 
 .container {
   width: 100%;
@@ -41,7 +47,6 @@ div {
 .bg {
   position: absolute;
   background-color: #ffed00;
-  background-image: url(../img/right-bg.jpg);
   background-repeat: no-repeat;
   background-position: 100% -770px;
   background-size: 50% 100%;
@@ -58,12 +63,26 @@ div {
   height: 100мр;
   position: absolute;
   left: 168px;
+  pointer-events: none;
 }
 .bg__img{
   width: 50vw;
   height: 100vh;
   position: absolute;
   right: 153px;
+  pointer-events: none;
+}
+.btn{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 20vw;
+  padding: 10px;
+  font-family: "Clan";
+  background: #4b8969;
+  color: #fff;
+  font-size: 2vw;
+  border: 0;
 }
 .bg1 {
   position: absolute;

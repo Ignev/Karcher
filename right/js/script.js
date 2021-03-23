@@ -10,12 +10,10 @@ $(".slider").slick({
   });
 
   window.addEventListener('wheel', function(event) {
-	if (event.deltaY > 0) {
+	if (event.deltaY > 2) {
 		$(".slider").slick("slickNext");
-        console.log(2);
 	 } else {
 		$(".slider").slick("slickPrev");
-        console.log(3);
 	 }
 });
 
