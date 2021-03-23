@@ -16,7 +16,7 @@
 }
 @font-face {
   font-family: "Clan";
-  src: url(../fonts/ClanOT-Bold.ttf);
+  src: url(../fonts/ClanOT-Medium.ttf);
   font-weight: normal;
   font-style: normal;
 }
@@ -56,8 +56,10 @@ div {
   color: #fff;
   font-size: 13vw;
   font-family: "Clan";
-  top: 55%;
-  left: 20%;
+  font-weight: bold;
+  top: 58%;
+  left: 10.5%;
+  line-height: 1;
 }
 
 .container,
@@ -172,6 +174,7 @@ div {
   position: absolute;
   font-size: 12vw;
   font-family: "Clan";
+  font-weight: bold;
   top: 10%;
   left: 10%;
   line-height: 1;
@@ -187,47 +190,64 @@ div {
   left: 52px;
 }
 .slider__img-2{
-  top: 65%;
+  top: 70%;
+  left: 7%;
+  width: 80vw;
+}
+.slider__text-1{
+  top: 10.5%;
+  left: 14%;
+}
+.slider__text-2{
+  top: 0%;
+  left: 13.2%;
+}
+.slider__text-3{
+  top: 0%;
+  left: 13.2%;
 }
 .slider__img-3{
-  width: 70vw;
-  left: 18%;
-  top: 44%;
+  width: 85vw;
+  left: 15%;
+  top: 30%;
 }
 .slider__img-4{
   z-index: 100;
   left: 6%;
 }
 .slider__text-4{
-  top: 25% !important;
-  left: 10%;
+  top: 20% !important;
+  left: 14%;
 }
 .slider__plus{
-  width: 40vw;
+  width: 45vw;
 }
 .slider__lable{
-  width: 30vw;
-  top: 60%;
+  width: 28vw;
+  top: 61%;
   position: absolute;
   z-index: 120;
-  left: 50%;
+  left: 56.5%;
 }
 .lable__img{
-  width: 40%;
+  width: 35%;
   position: absolute;
 }
 .lable__text{
-  font-size: 5vw;
+  font-size: 4.5vw;
   color: #fff;
   font-family: "Clan";
   position: absolute;
   z-index: 200;
-  top: 6%;
-  left: 4%;
+  top: 5%;
+  left: 5%;
+  line-height: 1.2;
 }
 .lable__text>span{
+  font-size: 7.5vw;
   font-weight: bold;
-  font-size: 6vw;
+  display: inline-block;
+  line-height: 1;
 }
 .btn{
   position: absolute;
@@ -241,6 +261,7 @@ div {
   text-align: center;
   font-size: 4vw;
   border: 0;
+  font-weight: bold;
 }
 @keyframes bg1 {
   0% {
@@ -379,28 +400,6 @@ div {
 }
 
 @media screen and (max-device-width: 1440px){
-  .slider__text-4{
-    top: 25% !important;
-  }
-  .lable__text{
-    font-size: 6vw;
-    color: #fff;
-    font-weight: bold;
-    font-family: "Clan";
-    position: absolute;
-    z-index: 200;
-    top: 5%;
-    left: 9%;
-  }
-  .slider__text {
-    position: absolute;
-    font-size: 12vw;
-    font-family: "Clan";
-    top: 20%;
-    left: 10%;
-    line-height: 1;
-  }
-  
   .slider__img {
     position: absolute;
     width: 90vw;
@@ -408,7 +407,7 @@ div {
   }
   .slider__img-1{
     top: 40%;
-    left: 30px;
+    left: 20px;
   }
   .slider__img-2{
     top: 52%;
@@ -421,9 +420,10 @@ div {
   .slider__img-4{
     z-index: 100;
     left: 6%;
+    top: 35%;
   }
   .slider__text-4{
-    top: 25% !important;
+    top: 20% !important;
     left: 10%;
   }
   .slider__plus{
@@ -433,10 +433,10 @@ div {
   }
   .slider__lable{
     width: 30vw;
-    top: 52%;
+    top: 46%;
     position: absolute;
     z-index: 120;
-    left: 50%;
+    left: 55%;
   }
   .lable__img{
     width: 40%;
@@ -457,16 +457,24 @@ div {
   }
   .btn{
     position: absolute;
-    bottom: 30%;
-    left: 17%;
+    bottom: 33%;
+    left: 12%;
     background: #4b8969;
-    width: 40%;
+    width: 45%;
     height: 30px;
     color: #fff;
     font-family: "Clan";
     text-align: center;
     font-size: 4vw;
     border: 0;
+  }
+  .slider__text {
+    position: absolute;
+    font-size: 13vw;
+    font-family: "Clan";
+    top: 13%;
+    left: 10%;
+    line-height: 1;
   }
 }
 @media screen and (max-device-width: 1280px){
@@ -480,32 +488,15 @@ div {
     top: 5%;
     left: 9%;
   }
-  .slider__text {
-    position: absolute;
-    font-size: 12vw;
-    font-family: "Clan";
-    top: 20%;
-    left: 10%;
-    line-height: 1;
-  }
   
-  .slider__img {
-    position: absolute;
-    width: 90vw;
-    top: 40%;
-  }
+  
+  
   .slider__img-1{
     top: 40%;
     left: 18px;
   }
-  .slider__img-2{
-    top: 50%;
-  }
-  .slider__img-3{
-    width: 70vw;
-    left: 20%;
-    top: 40%;
-  }
+
+  
   .slider__img-4{
     z-index: 100;
     left: 6%;
@@ -516,15 +507,15 @@ div {
   }
   .slider__plus{
     width: 40vw;
-    top: 9%;
+    top: -1%;
     position: absolute;
   }
   .slider__lable{
     width: 30vw;
-    top: 48%;
+    top: 39%;
     position: absolute;
     z-index: 120;
-    left: 50%;
+    left: 55%;
   }
   .lable__img{
     width: 40%;
@@ -545,7 +536,7 @@ div {
   }
   .btn{
     position: absolute;
-    bottom: 38%;
+    top: 50%;
     left: 17%;
     background: #4b8969;
     width: 40%;
@@ -555,5 +546,26 @@ div {
     text-align: center;
     font-size: 4vw;
     border: 0;
+  }
+  .slider__img {
+    position: absolute;
+    width: 90vw;
+    top: 30%;
+  }
+  .slider__text {
+    position: absolute;
+    font-size: 12vw;
+    font-family: "Clan";
+    top: 13%;
+    left: 10%;
+    line-height: 1;
+  }
+  .slider__img-3{
+    width: 70vw;
+    left: 20%;
+    top: 31%;
+  }
+  .slider__img-2{
+    top: 40%;
   }
 }

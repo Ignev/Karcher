@@ -65,7 +65,15 @@ div {
   position: fixed;
   pointer-events: none;
 }
-
+.title {
+  position: absolute;
+  color: #fff;
+  font-size: 13vw;
+  font-family: "Clan";
+  top: 51%;
+  left: 10.5%;
+  line-height: 1;
+}
 .bg1 {
   position: absolute;
 
@@ -241,28 +249,31 @@ div {
   position: absolute;
   font-size: 12vw;
   font-family: "Clan";
-  top: 10.5%;
-  left: 5%;
+  top: 4%;
+  left: 12%;
   line-height: 1;
 }
-
+.slider__text-1{
+  top: 4%;
+  left: 12%;
+}
 .slider__img {
   position: absolute;
-  width: 45vw;
-  top: 43%;
-  right: 27%;
+  width: 52vw;
+  top: 38%;
+  right: 15%;
   z-index: 10;
 }
 .slider__phone {
   position: absolute;
-  width: 95vw;
-  top: 40%;
-  right: 5%;
+  width: 110vw;
+  top: 33.5%;
+  right: -14%;
 }
 .btn {
   position: absolute;
-  bottom: 10%;
-  left: 10%;
+  bottom: 9%;
+  left: 14.5%;
   background: #4b8969;
   width: 40%;
   height: 40px;
@@ -361,7 +372,7 @@ div {
     position: absolute;
     font-size: 12vw;
     font-family: "Clan";
-    top: 22%;
+    top: 12%;
     left: 5%;
     line-height: 1;
   }
@@ -369,28 +380,28 @@ div {
   .slider__img {
     position: absolute;
     width: 45vw;
-    top: 43%;
+    top: 40%;
     right: 27%;
     z-index: 10;
   }
   .slider__phone {
     position: absolute;
     width: 95vw;
-    top: 41%;
+    top: 38%;
     right: 5%;
   }
   .btn {
     position: absolute;
-    bottom: 27%;
+    bottom: 33%;
     left: 10%;
     background: #4b8969;
-    width: 50%;
-    height: 25px;
+    width: 45%;
+    height: 30px;
     color: #fff;
     font-family: "Clan";
     text-align: center;
-    border: 0;
     font-size: 4vw;
+    border: 0;
   }
 
 }
@@ -399,7 +410,7 @@ div {
     position: absolute;
     font-size: 12vw;
     font-family: "Clan";
-    top: 15%;
+    top: 8%;
     left: 5%;
     line-height: 1;
   }
@@ -407,19 +418,19 @@ div {
   .slider__img {
     position: absolute;
     width: 45vw;
-    top: 30%;
+    top: 25%;
     right: 27%;
     z-index: 10;
   }
   .slider__phone {
     position: absolute;
     width: 95vw;
-    top: 28.5%;
+    top: 23.5%;
     right: 5%;
   }
   .btn {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 10%;
     background: #4b8969;
     width: 50%;
