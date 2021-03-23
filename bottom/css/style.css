@@ -53,11 +53,16 @@ div {
   overflow: hidden;
   position: fixed;
 }
+.bg1__img{
+  width: 50vw;
+  height: 100мр;
+  position: absolute;
+  left: 168px;
+}
 
 .bg1 {
   position: absolute;
   background-color: #ffed00;
-  background-image: url(../img/left-bg.jpg);
   background-repeat: no-repeat;
   background-position: 11% -860px;
   background-size: contain;
@@ -207,11 +212,10 @@ div {
   background-size: 41px;
   
 }
-@media screen and (max-device-width: 1920px){
+/* @media screen and (max-device-width: 1920px){
   .bg {
     position: absolute;
     background-color: #ffed00;
-    background-image: url(../img/right-bg.jpg);
     background-repeat: no-repeat;
     background-position: 100% -770px;
     background-size: 50% 100%;
@@ -227,7 +231,6 @@ div {
   .bg1 {
     position: absolute;
     background-color: #ffed00;
-    background-image: url(../img/left-bg.jpg);
     background-repeat: no-repeat;
     background-position: 9% -838px;
     background-size: contain;
@@ -275,7 +278,7 @@ div {
     position: fixed;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
-}
+} */
 
 
 

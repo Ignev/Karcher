@@ -69,6 +69,7 @@
 
     <div class="bg1" id="bg1">
       <div class="container1" id="container1">
+        <img src="./img/left-bg.jpg" alt="" class="bg1__img">
         <p class="title">
           DU BIST <br>
           DER PROFI. <br>
@@ -109,316 +110,217 @@
 
       
     </script>
-
     <script>
-      var bg = document.getElementsByClassName("bg")[0];
-      var bg1 = document.getElementsByClassName("bg1")[0];
-      var cover = document.getElementsByClassName("cover")[0];
-      var block = document.getElementsByClassName("ball")[0];
-      var line = document.getElementsByClassName("line")[0];
+      var bg = document.getElementsByClassName('bg')[0];
+      var bg1 = document.getElementsByClassName('bg1')[0];
+      var text = document.getElementsByClassName('text')[0];
+      var cover = document.getElementsByClassName('cover')[0];
+      var block = document.getElementsByClassName('ball')[0];
+      var line = document.getElementsByClassName('line')[0];
+      var logo = document.getElementById('logo');
+
+      bot1 = document.getElementById('bot1');
+      red1 = document.getElementById('red1');
+      bot2 = document.getElementById('bot2');
+      red2 = document.getElementById('red2');
+
       var container = document.getElementById("container");
       var container1 = document.getElementById("container1");
+
+      var logo = document.getElementById('logo');
+      var logo1 = document.getElementById('logo1');
+
+      var bgBottom = document.getElementById('bgBottom');
+      var bgBottom1 = document.getElementById('bgBottom1');
 
       var position;
       var bodyWidth;
 
+      var k_bgBottom = 500 / 346;
+
       var leftPosition = 0;
-      var positionStart = false;
-      var bodyWidth = document.getElementById("body").offsetWidth;
+      var positionStart = false; 
+          var bodyWidth = document.getElementById("body").offsetWidth;
 
       function getScrollBarWidth() {
-        var $outer = $("<div>")
-            .css({
-              visibility: "hidden",
-              width: 100,
-              overflow: "scroll",
-            })
-            .appendTo("body"),
-          widthWithScroll = $("<div>")
-            .css({
-              width: "100%",
-            })
-            .appendTo($outer)
-            .outerWidth();
-
-        $outer.remove();
-        return 100 - widthWithScroll;
-      }
+          var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
+              widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
+          $outer.remove();
+          return 100 - widthWithScroll;
+      };
 
       var a = getScrollBarWidth();
 
-      container.setAttribute(
-        "style",
-        "width: " + bodyWidth + "px; left: " + (leftPosition - a) + "px"
-      );
-      container1.setAttribute(
-        "style",
-        "width: " + bodyWidth + "px; left: " + (leftPosition - a) + "px"
-      );
+      container.setAttribute('style', "width: " + bodyWidth + "px; left: " + (leftPosition - a) + "px");
+      container1.setAttribute('style', "width: " + bodyWidth + "px; left: " + (leftPosition - a) + "px");
 
       function resize() {
-        getScrollBarWidth();
-        var bodyWidth = document.getElementById("body").offsetWidth;
-        if (bodyWidth > 480) {
-          if (a > 17) {
-            a = 0;
+          getScrollBarWidth();
+          var bodyWidth = document.getElementById("body").offsetWidth;
+          if (bodyWidth > 480) {
+              if (a > 17) {
+                  a = 0;
+              }
+              leftPosition = bodyWidth - 480;
+              container.setAttribute('style', "width: " + bodyWidth + "px; left: " + (leftPosition - a) + "px");
+              container1.setAttribute('style', "width: " + bodyWidth + "px; left: " + (leftPosition - a) + "px");
           }
-          leftPosition = bodyWidth - 480;
-          container.setAttribute(
-            "style",
-            "width: " + bodyWidth + "px; left: " + (leftPosition - a) + "px"
-          );
-          container1.setAttribute(
-            "style",
-            "width: " + bodyWidth + "px; left: " + (leftPosition - a) + "px"
-          );
-        }
+          if (bodyWidth < 480) {
+              leftPosition = 0;
+              container.setAttribute('style', "width: " + bodyWidth + "px; left: " + (a) + "px");
+              container1.setAttribute('style', "width: " + bodyWidth + "px; left: " + (a) + "px");
+          }
+          
 
-        if (bodyWidth < 480) {
-          leftPosition = 0;
-          container.setAttribute(
-            "style",
-            "width: " + bodyWidth + "px; left: " + a + "px"
-          );
-          container1.setAttribute(
-            "style",
-            "width: " + bodyWidth + "px; left: " + a + "px"
-          );
-        }
+          bgBottom.style.height = bgBottom.offsetWidth / k_bgBottom + 'px';
+          bgBottom1.style.height = bgBottom1.offsetWidth / k_bgBottom + 'px';
+
       }
 
-      document.addEventListener("DOMContentLoaded", function () {
-        resize();
+
+      document.addEventListener('DOMContentLoaded', function () {
+          resize();
       });
 
       window.onresize = function (event) {
-        resize();
+          resize();
       };
 
-      block.onmousedown = saveXY;
+        block.onmousedown = saveXY;
 
-      document.onmouseup = clearXY;
+        document.onmouseup = clearXY;
 
-      function saveXY(obj_event) {
-        if (obj_event) {
-          x = obj_event.pageX;
+        function saveXY(obj_event) {
 
-          y = obj_event.pageY;
-        } else {
-          x = window.event.clientX;
+          if (obj_event) {
+            x = obj_event.pageX;
+            y = obj_event.pageY;
+          }
+          else {
+            x = window.event.clientX;
+
+          }
+          /* Узнаём текущие координаты блока */
+          x_block = block.offsetLeft;
+
+          /* Узнаём смещение */
+          delta_x = x_block - x;
+
+          /* При движении курсора устанавливаем вызов функции moveWindow */
+          document.onmousemove = moveBlock;
+
+        }
+        function clearXY() {
+          document.onmousemove = null; // При отпускании мыши убираем обработку события движения мыши
         }
 
-        /* Узнаём текущие координаты блока */
+        setInterval(function(){
+          if (position > (widthBackground - 30)) {
+              clearXY();
+              position = (widthBackground - 1000) + 'px';
+          }
+          if (position < -30) {
+              clearXY();
+              position = 20;
+          }
+        }, 50);
 
-        x_block = block.offsetLeft;
+        function moveBlock(obj_event) {
+          positionStart = true;
+          /* Получаем новые координаты курсора мыши */
+          if (obj_event) {
+            x = obj_event.pageX;
 
-        /* Узнаём смещение */
+          }
+          else {
+            x = window.event.clientX;
 
-        delta_x = x_block - x;
+          }
+          /* Вычисляем новые координаты блока */
+          new_x = delta_x + x;
 
-        /* При движении курсора устанавливаем вызов функции moveWindow */
 
-        document.onmousemove = moveBlock;
-      }
-
-      function clearXY() {
-        document.onmousemove = null; // При отпускании мыши убираем обработку события движения мыши
-
-        // if (position > widthBackground) {
-        //     position = widthBackground - 50;
-        //     parent.postMessage(JSON.stringify({
-        //         position: position
-        //     }), '*');
-        // }
-        // if (position < -20) {
-        //     position = 10;
-        //     parent.postMessage(JSON.stringify({
-        //         position: position
-        //     }), '*');
-        // }
-      }
-
-      var positionEnd;
-
-      setInterval(function () {
-        // if (position > (widthBackground - 10)) {
-        //     // clearXY();
-        //     position = widthBackground - 40;
-        //     block.style.left = position + 'px';
-        //     line.style.left = position + 'px';
-        // }
-        // if (position + 10 > widthBackground) {
-        //     block.style.left = widthBackground - 50 + "px";
-        //     line.style.left = widthBackground - 50 + "px";
-        // }
-      }, 50);
-
-      function moveBlock(obj_event) {
-        positionStart = true;
-
-        /* Получаем новые координаты курсора мыши */
-
-        if (obj_event) {
-          x = obj_event.pageX;
-        } else {
-          x = window.event.clientX;
+          block.style.left = new_x + "px";
+          position = new_x;
+          line.style.left = new_x + "px";
+          parent.postMessage(JSON.stringify({
+              position: position
+          }), '*');
         }
-
-        /* Вычисляем новые координаты блока */
-
-        new_x = delta_x + x;
-
-        block.style.left = new_x + "px";
-
-        line.style.left = new_x + "px";
-
-        position = new_x;
-
-        if (position > widthBackground - 50) {
-          position = widthBackground - 50;
-          positionStart = false;
-          parent.postMessage(
-            JSON.stringify({
-              position: position,
-            }),
-            "*"
-          );
-        }
-
-        parent.postMessage(
-          JSON.stringify({
-            position: position,
-          }),
-          "*"
-        );
-      }
 
       var heightBackground;
-
       var widthBackground;
-
       var res = false;
+      
+      window.addEventListener('message', function (event) {
+          var parseData = JSON.parse(event.data);
 
-      window.addEventListener("message", function (event) {
-        var parseData = JSON.parse(event.data);
+          if(parseData.h != undefined){
+              heightBackground = parseData.h
+          }
 
-        if (parseData.h != undefined) {
-          heightBackground = parseData.h;
-        }
+          if(parseData.w != undefined){
+              widthBackground = parseData.w
+          }
 
-        if (parseData.w != undefined) {
-          widthBackground = parseData.w;
-        }
+          if(parseData.position != undefined){
+              position = parseData.position
+          }
 
-        if (parseData.position != undefined) {
-          position = parseData.position;
-        }
+          if (!positionStart) {
+              
+          }
 
-        if (!positionStart) {
-        }
+          if (parseData.res != undefined) {
+              res = parseData.res;
+          }
 
-        if (parseData.res != undefined) {
-          res = parseData.res;
-        }
+          if (res) {
+               block.style.left = position + 'px';
+              line.style.left = position + 'px';
+          }
+          else{
+              block.style.left = 600 + 'px';
+              line.style.left = 600 + 'px';
+          }
 
-        if (res) {
-          block.style.left = position + "px";
+          if (parseData.res != undefined) {
+              res = parseData.res;
+          }
 
-          line.style.left = position + "px";
-        } else {
-          block.style.left = 1300 + "px";
-
-          line.style.left = 1300 + "px";
-        }
-
-        if (parseData.res != undefined) {
-          res = parseData.res;
-        }
-
-        if (res) {
-          positionStart = true;
-
-          bg1.setAttribute(
-            "style",
-            "transform: translateX(" +
-              -a +
-              "px); clip-path: polygon(0 0, " +
-              (position + 30) +
-              "px 0, " +
-              (position + 30) +
-              "px 100%, 0 100%); width: " +
-              widthBackground +
-              "px; height: " +
-              heightBackground +
-              "px"
-          );
-          $(".ball").removeClass("ballActive");
-          $(".line").removeClass("lineActive");
-          $(".bg1").removeClass("bg1Active");
-        }
+          if (res) {
+              positionStart = true;
+               bg1.setAttribute("style", "transform: translateX(" + -a + "px); clip-path: polygon(0 0, " + (position + 30) + "px 0, " + (position + 30) +"px 100%, 0 100%); width: " + widthBackground + "px; height: " + heightBackground + "px");
+               $(".ball").removeClass('ballActive');
+              $(".line").removeClass('lineActive');
+              $(".bg1").removeClass('bg1Active');
+          }
       });
+      
+      setInterval(function(){
+          if (!positionStart) {
+              block.style.left = 600 + 'px';
+              line.style.left = 600 + 'px';
+          }
+          else{
+              $(".ball").removeClass('ballActive');
+              $(".line").removeClass('lineActive');
+              $(".bg1").removeClass('bg1Active');
+              parent.postMessage(JSON.stringify({
+                  res: true
+              }), '*'); 
+          }
 
-      setInterval(function () {
-        if (!positionStart) {
-          block.style.left = widthBackground - 330 + "px";
-
-          line.style.left = widthBackground - 330 + "px";
-        } else {
-          $(".ball").removeClass("ballActive");
-          $(".line").removeClass("lineActive");
-          $(".bg1").removeClass("bg1Active");
-          parent.postMessage(
-            JSON.stringify({
-              res: true,
-            }),
-            "*"
-          );
-        }
-
-        bg.setAttribute(
-          "style",
-          "transform: translateX(" +
-            -a +
-            "px); width: " +
-            widthBackground +
-            "px; height: " +
-            heightBackground +
-            "px"
-        );
-
-        bg1.setAttribute(
-          "style",
-          "clip-path: polygon(0 0, " +
-            (position + 30) +
-            "px 0, " +
-            (position + 30) +
-            "px 100%, 0 100%); transform: translateX(" +
-            -a +
-            "px); width: " +
-            widthBackground +
-            "px; height: " +
-            heightBackground +
-            "px"
-        );
-
-        cover.setAttribute(
-          "style",
-          "transform: translateX(" +
-            -a +
-            "px); width: " +
-            widthBackground +
-            "px; height: " +
-            heightBackground +
-            "px"
-        );
+          bg.setAttribute("style", "transform: translateX(" + -a + "px); width: " + widthBackground + "px; height: " + heightBackground + "px");
+          bg1.setAttribute("style", "clip-path: polygon(0 0, " + (position + 30) +  "px 0, " + (position + 30) +"px 100%, 0 100%); transform: translateX(" + -a + "px); width: " + widthBackground + "px; height: " + heightBackground + "px");
+          cover.setAttribute("style", "transform: translateX(" + -a + "px); width: " + widthBackground + "px; height: " + heightBackground + "px");
       }, 10);
 
-      setInterval(function () {
-        block.style.left = position + "px";
-        line.style.left = position + "px";
+      setInterval(function(){
+          block.style.left = position + 'px';
+          line.style.left = position + 'px';
       }, 1);
-      
-    </script>
+  </script>
 
     <script>
       var x_click = document.getElementsByClassName("clickAreaTop")[0];
