@@ -124,10 +124,7 @@ div {
   position: absolute;
   top: 0;
   left: 0;
-}
-.bg__img{
-  
-}
+} 
 .ball {
   background: url(../img/icon.png) 50% 50% no-repeat;
 
