@@ -83,6 +83,7 @@ div {
   color: #fff;
   font-size: 2vw;
   border: 0;
+  z-index: 9999;
 }
 .bg1 {
   position: absolute;

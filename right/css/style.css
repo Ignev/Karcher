@@ -239,36 +239,38 @@ div {
 }
 .slider__text {
   position: absolute;
-  font-size: 9vw;
+  font-size: 12vw;
   font-family: "Clan";
-  top: 5%;
-  left: 10%;
+  top: 10.5%;
+  left: 5%;
+  line-height: 1;
 }
 
 .slider__img {
   position: absolute;
   width: 45vw;
-  top: 40%;
-  right: 20%;
+  top: 43%;
+  right: 27%;
   z-index: 10;
 }
 .slider__phone {
   position: absolute;
-  width: 25vw;
-  top: 52%;
-  right: 58%;
+  width: 95vw;
+  top: 40%;
+  right: 5%;
 }
 .btn {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   left: 10%;
   background: #4b8969;
-  width: 80%;
+  width: 40%;
   height: 40px;
   color: #fff;
   font-family: "Clan";
   text-align: center;
   border: 0;
+  font-size: 4vw;
 }
 
 #hellopreloader > p {

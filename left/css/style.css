@@ -11,6 +11,12 @@
 @font-face {
   font-family: "Clan";
   src: url(../fonts/ClanOT-NarrowBlack.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Clan";
+  src: url(../fonts/ClanOT-Bold.ttf);
   font-weight: normal;
   font-style: normal;
 }
@@ -164,10 +170,11 @@ div {
 }
 .slider__text {
   position: absolute;
-  font-size: 11vw;
+  font-size: 12vw;
   font-family: "Clan";
   top: 10%;
   left: 10%;
+  line-height: 1;
 }
 
 .slider__img {
@@ -175,55 +182,64 @@ div {
   width: 90vw;
   top: 40%;
 }
+.slider__img-1{
+  top: 45%;
+  left: 52px;
+}
 .slider__img-2{
-  top: 50%;
+  top: 65%;
 }
 .slider__img-3{
   width: 70vw;
-  left: 20%;
+  left: 18%;
+  top: 44%;
 }
 .slider__img-4{
   z-index: 100;
-  left: 10%;
+  left: 6%;
 }
 .slider__text-4{
   top: 25% !important;
   left: 10%;
 }
 .slider__plus{
-  width: 60vw;
+  width: 40vw;
 }
 .slider__lable{
   width: 30vw;
-  top: 50%;
+  top: 60%;
   position: absolute;
   z-index: 120;
-  left: 40%;
+  left: 50%;
 }
 .lable__img{
-  width: 55%;
+  width: 40%;
   position: absolute;
 }
 .lable__text{
-  font-size: 6vw;
+  font-size: 5vw;
   color: #fff;
-  font-weight: bold;
   font-family: "Clan";
   position: absolute;
   z-index: 200;
-  top: 8%;
-  left: 9%;
+  top: 6%;
+  left: 4%;
+}
+.lable__text>span{
+  font-weight: bold;
+  font-size: 6vw;
 }
 .btn{
   position: absolute;
   bottom: 10%;
-  left: 10%;
+  left: 15%;
   background: #4b8969;
-  width: 80%;
+  width: 40%;
   height: 40px;
   color: #fff;
   font-family: "Clan";
   text-align: center;
+  font-size: 4vw;
   border: 0;
 }
 @keyframes bg1 {
