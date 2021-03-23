@@ -357,11 +357,78 @@ div {
 } */
 
 @media screen and (max-device-width: 1440px){
+  .slider__text {
+    position: absolute;
+    font-size: 12vw;
+    font-family: "Clan";
+    top: 22%;
+    left: 5%;
+    line-height: 1;
+  }
+  
+  .slider__img {
+    position: absolute;
+    width: 45vw;
+    top: 43%;
+    right: 27%;
+    z-index: 10;
+  }
   .slider__phone {
-  position: absolute;
-  width: 25vw;
-  top: 46%;
-  right: 58%;
-}
-}
+    position: absolute;
+    width: 95vw;
+    top: 41%;
+    right: 5%;
+  }
+  .btn {
+    position: absolute;
+    bottom: 27%;
+    left: 10%;
+    background: #4b8969;
+    width: 50%;
+    height: 25px;
+    color: #fff;
+    font-family: "Clan";
+    text-align: center;
+    border: 0;
+    font-size: 4vw;
+  }
 
+}
+@media screen and (max-device-width: 1280px){
+  .slider__text {
+    position: absolute;
+    font-size: 12vw;
+    font-family: "Clan";
+    top: 15%;
+    left: 5%;
+    line-height: 1;
+  }
+  
+  .slider__img {
+    position: absolute;
+    width: 45vw;
+    top: 30%;
+    right: 27%;
+    z-index: 10;
+  }
+  .slider__phone {
+    position: absolute;
+    width: 95vw;
+    top: 28.5%;
+    right: 5%;
+  }
+  .btn {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    background: #4b8969;
+    width: 50%;
+    height: 20px;
+    color: #fff;
+    font-family: "Clan";
+    text-align: center;
+    border: 0;
+    font-size: 4vw;
+  }
+
+}
