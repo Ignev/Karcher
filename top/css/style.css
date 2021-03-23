@@ -63,7 +63,6 @@ div {
 .bg {
   position: absolute;
   background-color: #ffed00;
-  background-image: url(../img/right-bg.jpg);
   background-repeat: no-repeat;
   background-position: 100%;
   background-size: 50% 100%;
@@ -74,6 +73,12 @@ div {
   transform: translateX(-50%);
   overflow: hidden;
   position: fixed;
+}
+.bg__img{
+  width: 50vw;
+  height: 100%;
+  position: absolute;
+  right: 152.9px;
 }
 .bg1__img{
   width: 50vw;

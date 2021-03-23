@@ -59,7 +59,12 @@ div {
   position: absolute;
   left: 168px;
 }
-
+.bg__img{
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  right: 153px;
+}
 .bg1 {
   position: absolute;
   background-color: #ffed00;
